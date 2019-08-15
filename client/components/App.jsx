@@ -13,7 +13,7 @@ class App extends React.Component {
     render() { 
         return (  
             <React.Fragment>
-                <h1>Welcome!</h1>
+                <h1>Amazing bank web app</h1>
             </React.Fragment>
         );
     }
