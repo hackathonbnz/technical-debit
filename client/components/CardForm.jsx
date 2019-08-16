@@ -1,15 +1,32 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useState, useEffect } from "react";
+import CardSummary from "./CardSummary";
 
 const CardForm = () => {
   const [account, setAccount] = useState("");
   const [limit, setLimit] = useState("");
   const [expiry, setExpiry] = useState("");
   const [cardName, setCardName] = useState("");
+  let finalCard;
 
   const handleSubmit = e => {
     e.preventDefault();
     console.log(account, limit, expiry, cardName);
+    // finalCard = {
+    //   account: account,
+    //   limit: limit,
+    //   expiry: expiry,
+    //   cardName: cardName
+    // };
   };
+
+  useEffect(() => {
+    finalCard = {
+      account: account,
+      limit: limit,
+      expiry: expiry,
+      cardName: cardName
+    };
+  });
 
   return (
     <Fragment className="card-form">
@@ -84,6 +101,7 @@ const CardForm = () => {
           </div>
         </div>
       </form>
+      {/* <CardSummary props={finalCard} /> */}
     </Fragment>
   );
 };
