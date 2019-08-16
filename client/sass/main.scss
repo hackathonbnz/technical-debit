@@ -1,11 +1,13 @@
-//Colours
+@charset "utf-8";
+@import "~bulma/bulma";
 
-$color-primary:white;
-$color-orangebnz:#FAA819 ;
-$color-verylightblue: #84D2F6;
-$color-lightblue:#59A5D8;
-$color-mediumblue:#386FA4;
-$color-darkblue:#133C55;
+//Colours
+$color-primary: white;
+$color-orangebnz: #faa819;
+$color-verylightblue: #84d2f6;
+$color-lightblue: #59a5d8;
+$color-mediumblue: #386fa4;
+$color-darkblue: #133c55;
 
 //Media Queries
 
@@ -15,31 +17,31 @@ $screen-lg: 90rem;
 $screen-xl: 100rem;
 
 @mixin tablet {
-    @media (min-width: #{$screen-sm}) {
-        @content;
-    }
+  @media (min-width: #{$screen-sm}) {
+    @content;
+  }
 }
 
 @mixin desktop {
-    @media (min-width: #{$screen-md}) {
-        @content;
-    }
+  @media (min-width: #{$screen-md}) {
+    @content;
+  }
 }
 
 @mixin desktop-large {
-    @media (min-width: #{$screen-lg}) {
-        @content;
-    }
+  @media (min-width: #{$screen-lg}) {
+    @content;
+  }
 }
 
 @mixin desktop-xlarge {
-    @media (min-width: #{$screen-xl}) {
-        @content;
-    }
+  @media (min-width: #{$screen-xl}) {
+    @content;
+  }
 }
 
-
-body,html{
+body,
+html {
   max-width: 100%;
   margin: 0;
   padding: 0;
@@ -48,7 +50,6 @@ body,html{
   background-color: $color-lightblue;
   font-size: 16px;
 }
-
 
 body {
 }

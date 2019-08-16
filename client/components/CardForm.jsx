@@ -1,76 +1,91 @@
-import React, { Fragment } from "react";
-// import { makeStyles } from "@material-ui/core/styles";
-// import OutlinedInput from "@material-ui/core/OutlinedInput";
-// import InputLabel from "@material-ui/core/InputLabel";
-// import MenuItem from "@material-ui/core/MenuItem";
-// import FormControl from "@material-ui/core/FormControl";
-// import Select from "@material-ui/core/Select";
+import React, { Fragment, useState } from "react";
 
-// const useStyles = makeStyles(theme => ({
-//   root: {
-//     display: "flex",
-//     flexWrap: "wrap"
-//   },
-//   formControl: {
-//     margin: theme.spacing(1),
-//     minWidth: 120
-//   },
-//   selectEmpty: {
-//     marginTop: theme.spacing(2)
-//   }
-// }));
+const CardForm = () => {
+  const [account, setAccount] = useState("");
+  const [limit, setLimit] = useState("");
+  const [expiry, setExpiry] = useState("");
+  const [cardName, setCardName] = useState("");
 
-// function SimpleSelect() {
-//   const classes = useStyles();
-//   const [values, setValues] = React.useState({
-//     age: "",
-//     name: "hai"
-//   });
+  const handleSubmit = e => {
+    e.preventDefault();
+    console.log(account, limit, expiry, cardName);
+  };
 
-//   const inputLabel = React.useRef(null);
-//   const [labelWidth, setLabelWidth] = React.useState(0);
-//   React.useEffect(() => {
-//     setLabelWidth(inputLabel.current.offsetWidth);
-//   }, []);
-
-//   function handleChange(event) {
-//     setValues(oldValues => ({
-//       ...oldValues,
-//       [event.target.name]: event.target.value
-//     }));
-//   }
-
-function CardForm() {
   return (
     <Fragment>
-      <div>Hey</div>
-      {/* <form className={classes.root} autoComplete="off">
-          <FormControl variant="outlined" className={classes.formControl}>
-            <InputLabel ref={inputLabel} htmlFor="outlined-age-simple">
-              Age
-            </InputLabel>
-            <Select
-              value={values.age}
-              onChange={handleChange}
-              input={
-                <OutlinedInput
-                  labelWidth={labelWidth}
-                  name="age"
-                  id="outlined-age-simple"
-                />
-              }
-            >
-              <MenuItem value="">
-                <em>None</em>
-              </MenuItem>
-              <MenuItem value={10}>Ten</MenuItem>
-              <MenuItem value={20}>Twenty</MenuItem>
-              <MenuItem value={30}>Thirty</MenuItem>
-            </Select>
-          </FormControl>
-        </form> */}
+      <section class="hero is-medium is-primary is-bold">
+        <div class="hero-body">
+          <div class="container">
+            <h1 class="title"> Get Started</h1>
+          </div>
+        </div>
+      </section>
+      <h2 className="title"> </h2>
+      <form className="column is-half" onSubmit={handleSubmit}>
+        <div className="field">
+          <label className="label">Choose Account</label>
+          <div className="control">
+            <div className="select">
+              <select onChange={e => setAccount(e.target.value)}>
+                <option>Select account</option>
+                <option>Current Account | $1200.00</option>
+                <option>Savings Account | $3000.00</option>
+                <option>Debit Account | $4000.00</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div className="field">
+          <label className="label">Select Card Limit</label>
+          <div className="control has-icons-left">
+            <input
+              className="input"
+              type="number"
+              placeholder="Select limit"
+              onChange={e => setLimit(e.target.value)}
+            />
+            <span class="icon is-small is-left">$</span>
+          </div>
+        </div>
+
+        <div className="field">
+          <label className="label">
+            Select Card Expiry{" "}
+            <span className="text-muted">up to 12 months</span>
+          </label>
+          <div className="control">
+            <input
+              className="input"
+              type="date"
+              placeholder="Select expiry date"
+              onChange={e => setExpiry(e.target.value)}
+            />
+          </div>
+        </div>
+
+        <div className="field">
+          <label className="label">Name Your Card!</label>
+          <div className="control">
+            <input
+              className="input"
+              type="text"
+              placeholder="Your card name here"
+              onChange={e => setCardName(e.target.value)}
+            />
+          </div>
+        </div>
+
+        <div className="field is-grouped">
+          <div className="control">
+            <button className="button is-primary" type="submit">
+              Create My Virtual Card!
+            </button>
+          </div>
+        </div>
+      </form>
     </Fragment>
   );
-}
+};
 
 export default CardForm;
