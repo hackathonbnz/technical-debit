@@ -1,21 +1,20 @@
 import React from "react";
+
 import { Link } from "react-router-dom";
 
-class Intro extends React.Component {
+class IntroTwo extends React.Component {
   constructor(props) {
     super(props);
-
-    this.state = {};
   }
 
   render() {
     return (
       <div>
         <div>
-          <h1>Virtual Card !</h1>
+          <h1>User Cases</h1>
         </div>
         <div>
-          <Link to="/IntroTwo">
+          <Link to="/IntroThree">
             <p>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime
               commodi itaque, explicabo laboriosam at sit quam officiis quod ab
@@ -39,4 +38,4 @@ class Intro extends React.Component {
   }
 }
 
-export default Intro;
+export default IntroTwo;

@@ -1,5 +1,9 @@
 import React from "react";
 import Intro from "./Intro";
+import IntroTwo from "./IntroTwo";
+import IntroThree from "./IntroThree";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -9,10 +13,13 @@ class App extends React.Component {
 
   render() {
     return (
-      <React.Fragment>
-        <h1>Amazing bank web app</h1>
-        <Intro />
-      </React.Fragment>
+      <Router>
+        <React.Fragment>
+          <Route exact path="/" component={Intro} />
+          <Route exact path="/IntroTwo" component={IntroTwo} />
+          <Route path="/IntroThree" component={IntroThree} />
+        </React.Fragment>
+      </Router>
     );
   }
 }
