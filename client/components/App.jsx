@@ -18,7 +18,6 @@ class App extends React.Component {
           <Route path="/form" component={CardForm} />
           <Route path="/summary" component={CardSummary} />
         </Router>
-        <h1>Amazing bank web app</h1>
       </React.Fragment>
     );
   }

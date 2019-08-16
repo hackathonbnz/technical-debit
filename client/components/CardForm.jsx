@@ -12,11 +12,11 @@ const CardForm = () => {
   };
 
   return (
-    <Fragment>
-      <section class="hero is-medium is-primary is-bold">
+    <Fragment className="card-form">
+      <section class="hero is-medium is-default is-bold">
         <div class="hero-body">
           <div class="container">
-            <h1 class="title"> Get Started</h1>
+            <h1 class="title">GET STARTED</h1>
           </div>
         </div>
       </section>
