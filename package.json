@@ -25,6 +25,7 @@
   },
   "dependencies": {
     "express": "^4.17.1",
+    "react-responsive-carousel": "^3.1.50",
     "superagent": "^5.1.0"
   },
   "devDependencies": {
